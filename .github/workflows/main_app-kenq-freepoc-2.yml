@@ -1,3 +1,6 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
 name: Build and deploy Node.js app to Azure Web App - app-kenq-freepoc-2
 
 on:
@@ -30,8 +33,6 @@ jobs:
         run: |
           cp -r .next/static .next/standalone/.next/static
           cp -r public .next/standalone/public
-          cp server.js .next/standalone/
-          cp package.json .next/standalone/
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
