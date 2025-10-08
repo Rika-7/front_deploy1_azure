@@ -31,14 +31,16 @@ jobs:
 
       - name: Prepare deployment files
         run: |
-          cp -r .next/static .next/standalone/.next/static
-          cp -r public .next/standalone/public
+          cp -r .next/standalone ./deploy
+          cp -r .next/static ./deploy/.next/static
+          cp -r public ./deploy/public
+          cp package.json ./deploy/package.json
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: .next/standalone
+          path: deploy
 
   deploy:
     runs-on: ubuntu-latest
